@@ -11,6 +11,10 @@ class App extends Component {
       { id: 4, title: "TV", content: "buy new programs" }
     ]
   };
+  deleteToDo = (id)=>{
+    console.log(id);
+
+  }
   render() {
     return (
       <div className="todoClassCss container">
@@ -18,11 +22,11 @@ class App extends Component {
         <div className="row">
           <div className="input-field col s12">
             <input id="title" type="text" className="validate" />
-            <label className="active" for="title">
+            <label className="active" htmlFor="title">
               Title:
             </label>
           </div>
-          <ToDoList todo={this.state.todo} />
+          <ToDoList todo={this.state.todo} deleteToDo={this.deleteToDo} />
         </div>
       </div>
     );
