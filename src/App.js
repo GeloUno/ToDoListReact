@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./ToDoList";
+import ToDoList from "./ToDoList";
 
 class App extends Component {
+  state = {
+    todo: [
+      { id: 1, title: "Shopping", content: "buy some coffee" },
+      { id: 2, title: "Sport", content: "buy tickets to gym" },
+      { id: 3, title: "School", content: "buy lesson" },
+      { id: 4, title: "TV", content: "buy new programs" }
+    ]
+  };
   render() {
-    // $(document).ready(function() {
-    //   M.updateTextFields();
-    // });
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-
+      <div className="todoClassCss container">
+      <h1 className="center  purple-text">To Do List</h1>
         <div className="row">
-    <div className="input-field col s6">
-      <input  id="first_name2" type="text" className="validate"></input>
-      <label className="active" for="first_name2">First Name</label>
-    </div>
-  </div>
-        
+          <div className="input-field col s12">
+            <input id="title" type="text" className="validate" />
+            <label className="active" for="title">
+              Title:
+            </label>
+          </div>
+          <ToDoList todo={this.state.todo} />
+        </div>
       </div>
     );
   }
