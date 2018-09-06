@@ -1,28 +1,44 @@
-.App {
-  text-align: center;
+ /* label color */
+ .input-field label {
+  color: purple;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: purple;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid purple;
+  box-shadow: 0 1px 0 0 purple;
 }
-
-.App-title {
-  font-size: 1.5em;
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid purple;
+  box-shadow: 0 1px 0 0 purple;
 }
-
-.App-intro {
-  font-size: large;
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid purple;
+  box-shadow: 0 1px 0 0 purple;
 }
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: purple;
+}
+.collection{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;  
+  cursor: pointer;
+  border: none;
+  border-bottom:solid 2px;
+  border-bottom-color: purple;
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+}
+.collection>:first-child{
+  font-weight: bold;
+  box-shadow: 10px 5px 10px 10p purple;
+}
+.collection>:nth-child(3){
+  box-shadow: 10px 5px 10px 10px purple;
 }

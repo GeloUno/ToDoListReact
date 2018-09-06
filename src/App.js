@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ToDoList";
 import ToDoList from "./ToDoList";
 import AddToDo from "./AddToDo";
+import style from './App.css'
 
 class App extends Component {
   state = {
@@ -21,13 +22,20 @@ class App extends Component {
     this.setState({todo:todo1})
     }
 
-  
+  addToDoState = (to_do)=>{
+    to_do.id = Math.floor(Math.random()*1000);
+    let to_do_1 = [...this.state.todo, to_do];
+    this.setState({
+      todo:to_do_1      
+    })
+
+  }
   render() {
     return (
       <div className="todoClassCss container">
       <h1 className="center  purple-text">To Do List</h1>
         <div className="row"> 
-        <AddToDo />         
+        <AddToDo addToDoState={this.addToDoState} />         
           <ToDoList todo={this.state.todo} deleteToDo={this.deleteToDo} />
         </div>
       </div>
